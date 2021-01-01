@@ -44,3 +44,9 @@ void hospital_system() {
 			break;
 	}
 }
+
+int main() {
+//freopen("c.in", "rt", stdin);
+	hospital_system();
+	return 0;
+}
