@@ -1,8 +1,14 @@
+#include<iostream>
 using namespace std;
 
 // Global variables
 const int MAX_SPECIALIZATION = 20; // 20 Available spatializations in hospital ... like- Dental, child, surgery
 const int MAX_QUEUE = 5;    // maximum waiting line
+
+
+string names[MAX_SPECIALIZATION+1][MAX_QUEUE+1];
+int status[MAX_SPECIALIZATION+1][MAX_QUEUE+1];		// 0 regular, 1 urgent
+int queue_length[MAX_SPECIALIZATION+1];			// for each specialization: how many patients so far
 
 // Main Menu
 int menu() {
