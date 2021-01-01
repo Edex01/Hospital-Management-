@@ -29,3 +29,18 @@ int menu() {
 	}
 	return choice;
 }
+
+void hospital_system() {
+	while (true) {
+		int choice = menu();
+
+		if (choice == 1)
+			add_patient();
+		else if (choice == 2)
+			print_patients();
+		else if (choice == 3)
+			get_next_patients();
+		else
+			break;
+	}
+}
