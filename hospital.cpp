@@ -54,6 +54,39 @@ void shift_right(int spec, string names_sp[], int status_sp[])
 
 
 
+
+bool add_patient() {
+	int spec;
+	string name;
+	int st;
+
+	cout << "Enter specialization, name, statis: ";
+	cin >> spec >> name >> st;
+
+	int pos = queue_length[spec];
+	if (pos >= MAX_QUEUE) {
+		cout << "Sorry we can't add more patients for this specialization\n";
+		return false;
+	}
+
+	if (st == 0)	// regular, add to end
+	{
+		names[spec][pos] = name;
+		status[spec][pos] = st;
+		queue_length[spec]++;
+	}
+	else {
+		// urgent, add to begin. Shift, then add
+		shift_right(spec, names[spec], status[spec]);
+		names[spec][0] = name;
+		status[spec][0] = st;
+	}
+
+
+	return true;
+}
+
+
 void hospital_system() {
 	while (true) {
 		int choice = menu();
