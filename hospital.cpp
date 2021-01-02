@@ -30,6 +30,20 @@ int menu() {
 	return choice;
 }
 
+
+// change queue after someone left.Like positon 4 will be 3
+void shift_left(int spec, string names_sp[], int status_sp[])
+{
+	int len = queue_length[spec];
+	for (int i = 1; i < len; ++i) {
+		names_sp[i-1] = names_sp[i];
+		status_sp[i-1] = status_sp[i];
+	}
+	queue_length[spec]--;
+}
+
+
+
 void hospital_system() {
 	while (true) {
 		int choice = menu();
