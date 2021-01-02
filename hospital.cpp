@@ -42,6 +42,16 @@ void shift_left(int spec, string names_sp[], int status_sp[])
 	queue_length[spec]--;
 }
 
+void shift_right(int spec, string names_sp[], int status_sp[])
+{
+	int len = queue_length[spec];
+	for (int i = len-1; i >= 0; --i) {	// critical to start from END
+		names_sp[i+1] = names_sp[i];
+		status_sp[i+1] = status_sp[i];
+	}
+	queue_length[spec]++;
+}
+
 
 
 void hospital_system() {
