@@ -87,6 +87,22 @@ bool add_patient() {
 }
 
 
+void print_patient(int spec, string names_sp[], int status_sp[]) {
+	int len = queue_length[spec];
+	if (len == 0)
+		return;
+
+	cout << "There are " << len << " patients in specialization " << spec << "\n";
+	for (int i = 0; i < len; ++i) {
+		cout << names_sp[i] << " ";
+		if (status_sp[i])
+			cout << "urgent\n";
+		else
+			cout << "regular\n";
+	}
+	cout << "\n";
+}
+
 void hospital_system() {
 	while (true) {
 		int choice = menu();
