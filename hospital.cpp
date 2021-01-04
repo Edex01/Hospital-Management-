@@ -103,6 +103,13 @@ void print_patient(int spec, string names_sp[], int status_sp[]) {
 	cout << "\n";
 }
 
+void print_patients() {
+	cout << "****************************\n";
+	for (int spec = 0; spec < MAX_SPECIALIZATION; ++spec) {
+		print_patient(spec, names[spec], status[spec]);
+	}
+}
+
 void hospital_system() {
 	while (true) {
 		int choice = menu();
