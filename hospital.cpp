@@ -110,6 +110,23 @@ void print_patients() {
 	}
 }
 
+void get_next_patients() {
+	int spec;
+	cout << "Enter specialization: ";
+	cin >> spec;
+
+	int len = queue_length[spec];
+
+	if(len == 0) {
+		cout<<"No patients at the moment. Have rest, Dr\n";
+		return;
+	}
+
+	// Let patient goes to dr
+	cout<<names[spec][0]<<" please go with the Dr\n";
+
+}
+
 void hospital_system() {
 	while (true) {
 		int choice = menu();
