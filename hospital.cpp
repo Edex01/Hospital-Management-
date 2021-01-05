@@ -125,6 +125,8 @@ void get_next_patients() {
 	// Let patient goes to dr
 	cout<<names[spec][0]<<" please go with the Dr\n";
 
+	// delete the patient in position 0
+	shift_left(spec, names[spec], status[spec]);
 }
 
 void hospital_system() {
