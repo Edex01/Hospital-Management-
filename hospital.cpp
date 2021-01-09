@@ -3,7 +3,7 @@ using namespace std;
 
 // Global variables
 const int MAX_SPECIALIZATION = 20; // 20 Available spatializations in hospital ... like- Dental, child, surgery
-const int MAX_QUEUE = 5;    // maximum waiting line
+const int MAX_QUEUE = 5;    // maximum waiting line i.e only 5 patients are allowed
 
 
 string names[MAX_SPECIALIZATION+1][MAX_QUEUE+1];
