@@ -31,7 +31,7 @@ int menu() {
 }
 
 
-// change queue after someone left.Like positon 4 will be 3
+// change queue after someone left.Like positon 4 will be 3 
 void shift_left(int spec, string names_sp[], int status_sp[])
 {
 	int len = queue_length[spec];
@@ -42,6 +42,8 @@ void shift_left(int spec, string names_sp[], int status_sp[])
 	queue_length[spec]--;
 }
 
+
+// shifting right after emergency entry
 void shift_right(int spec, string names_sp[], int status_sp[])
 {
 	int len = queue_length[spec];
@@ -52,9 +54,7 @@ void shift_right(int spec, string names_sp[], int status_sp[])
 	queue_length[spec]++;
 }
 
-
-
-
+// add patient to queue
 bool add_patient() {
 	int spec;
 	string name;
@@ -86,7 +86,7 @@ bool add_patient() {
 	return true;
 }
 
-
+// Print specific patient for specialization
 void print_patient(int spec, string names_sp[], int status_sp[]) {
 	int len = queue_length[spec];
 	if (len == 0)
@@ -103,6 +103,7 @@ void print_patient(int spec, string names_sp[], int status_sp[]) {
 	cout << "\n";
 }
 
+// printing patients
 void print_patients() {
 	cout << "****************************\n";
 	for (int spec = 0; spec < MAX_SPECIALIZATION; ++spec) {
@@ -110,6 +111,7 @@ void print_patients() {
 	}
 }
 
+// geting next patient from queue
 void get_next_patients() {
 	int spec;
 	cout << "Enter specialization: ";
@@ -129,6 +131,7 @@ void get_next_patients() {
 	shift_left(spec, names[spec], status[spec]);
 }
 
+// Hospital
 void hospital_system() {
 	while (true) {
 		int choice = menu();
@@ -144,6 +147,8 @@ void hospital_system() {
 	}
 }
 
+
+// Main
 int main() {
 //freopen("c.in", "rt", stdin);
 	hospital_system();
